@@ -15,7 +15,7 @@ services:
     image: mysql:8.0
     container_name: database
     environment:
-      MYSQL_DATABASE: laravel
+      MYSQL_DATABASE: main
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
       MYSQL_ROOT: root
