@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   app:
-    container_name: gsescraper
+    container_name: laravel
     build:
       context: .
       dockerfile: Dockerfile
@@ -16,7 +16,7 @@ services:
     image: mysql:8.0
     container_name: database
     environment:
-      MYSQL_DATABASE: main
+      MYSQL_DATABASE: laravel
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
       MYSQL_ROOT: root
