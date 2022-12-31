@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: 'php artisan serve --host=baxdell.local'
+    command: 'php artisan serve --host=localhost'
     volumes:
       - .:/app
     ports:
