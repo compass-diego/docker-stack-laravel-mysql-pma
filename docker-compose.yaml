@@ -12,8 +12,7 @@ services:
       - 64520:8000
 
   db:
-    platform: linux/x86_64
-    image: mysql:5.7
+    image: mysql:8.0
     container_name: database
     environment:
       MYSQL_DATABASE: laravel
@@ -22,7 +21,7 @@ services:
       MYSQL_ROOT: root
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - ./storage/dbdata:/var/lib/mysql
+      - db_laravel_data:/var/lib/mysql
     ports:
       - 3306:3306
 
@@ -38,3 +37,6 @@ services:
     restart: always
     ports:
       - 8081:80
+
+volumes:
+  db_laravel_data:
