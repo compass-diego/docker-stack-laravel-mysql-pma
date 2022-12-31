@@ -36,7 +36,7 @@
                 </div>
             @endif
 
-            @if (Auth::user()->name=="user_name")
+            @if (Auth::user() && Auth::user()->name=="user_name")
                 <h2>Hello</h2>
             @else
                 <h2>Ciao</h2>
