@@ -10,7 +10,5 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 COPY . .
-RUN echo 'running composer install'
 RUN composer install
-RUN echo 'running php artisan key:generate'
 RUN php artisan key:generate
