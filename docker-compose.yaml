@@ -38,7 +38,7 @@ services:
       PMA_ARBITRARY: 1
     restart: always
     ports:
-      - "8081:80"
+      - "64521:80"
 
 volumes:
   db_laravel_data:
