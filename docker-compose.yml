@@ -12,7 +12,6 @@ services:
     command: 'php artisan serve --host=0.0.0.0'
     volumes:
       - .:/app
-    restart: always
     ports:
       - "64520:8000"
 
@@ -42,7 +41,6 @@ services:
       PMA_HOST: db
       PMA_PORT: 3306
       PMA_ARBITRARY: 1
-    restart: always
     ports:
       - "64521:80"
 
