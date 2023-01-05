@@ -12,6 +12,7 @@ services:
     command: 'php artisan serve --host=0.0.0.0'
     volumes:
       - .:/app
+    restart: always
     ports:
       - "64520:8000"
 
@@ -19,13 +20,14 @@ services:
     image: mysql:8.0
     container_name: "${APP_NAME}-${APP_ENV}-database"
     environment:
-      MYSQL_DATABASE: laravel
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: "${DB_DATABASE}"
+      MYSQL_USER: "${DB_USERNAME}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - db_laravel_data:/var/lib/mysql
+    restart: always
     ports:
       - "3306:3306"
 
