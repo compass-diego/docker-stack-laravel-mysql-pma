@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   app:
-    container_name: "${APP_NAME}-${APP_ENV}-laravel"
+    container_name: "${APP_NAME}-${APP_ENV}-laravel-app"
     depends_on:
       - db
     links:
@@ -13,7 +13,7 @@ services:
     volumes:
       - .:/app
     ports:
-      - "64520:8000"
+      - "${CONTAINER_APP_PORT}:8000"
 
   db:
     image: mysql:8.0
@@ -26,8 +26,6 @@ services:
     volumes:
       - db_laravel_data:/var/lib/mysql
     restart: always
-    ports:
-      - "3306:3306"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -41,7 +39,7 @@ services:
       PMA_PORT: 3306
       PMA_ARBITRARY: 1
     ports:
-      - "64521:80"
+      - "${CONTAINER_PMA_PORT}:80"
 
 volumes:
   db_laravel_data:
