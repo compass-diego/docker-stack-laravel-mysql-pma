@@ -12,11 +12,24 @@ class UserController extends Controller
      * @param int $id
      * @return View
      */
-    public function show(int $id): View
+    public function user_detail(int $id): View
     {
         $data = [
             'user' => (new User)->findOrFail($id)
         ];
-        return view('profile', $data);
+        return view('user_detail', $data);
+    }
+
+    /**
+     * Show the profile for a given user.
+     *
+     * @return View
+     */
+    public function users_list(): View
+    {
+        $data = [
+            'users' => (new User)->all()
+        ];
+        return view('users_list', $data);
     }
 }
